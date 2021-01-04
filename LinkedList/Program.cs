@@ -96,7 +96,7 @@ namespace LinkedList
         // the size of the list, and only iterate
         // through the list one time.
         // --- Example
-        //   const l = new LinkedList();
+        //   var l = new LinkedList();
         //   l.insertLast('a')
         //   l.insertLast('b')
         //   l.insertLast('c')
@@ -121,10 +121,10 @@ namespace LinkedList
         // Given a linked list, return true if the list
         // is circular, false if it is not.
         // --- Examples
-        //   const l = new List();
-        //   const a = new Node('a');
-        //   const b = new Node('b');
-        //   const c = new Node('c');
+        //   var l = new List();
+        //   var a = new Node('a');
+        //   var b = new Node('b');
+        //   var c = new Node('c');
         //   l.head = a;
         //   a.next = b;
         //   b.next = c;
@@ -143,7 +143,6 @@ namespace LinkedList
                 if (slow == fast)
                     return true;
             }
-
             return false;
         }
 

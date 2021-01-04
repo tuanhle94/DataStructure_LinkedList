@@ -4,10 +4,17 @@ using System.Text;
 
 namespace LinkedList
 {
+    /// <summary>
+    /// Linked list class
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class LinkedList<T>
     {
         private Node<T> head;
 
+        /// <summary>
+        /// Head property
+        /// </summary>
         public Node<T> Head
         {
             get
@@ -20,17 +27,29 @@ namespace LinkedList
                 head = value;
             }
         }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public LinkedList()
         {
             head = null;
         }
 
+        /// <summary>
+        /// Creates a new Node from argument 'data' and assigns the resulting node to the 'head' property
+        /// </summary>
+        /// <param name="data">the data to be inserted</param>
         public void InsertFirst(object data)
         {
             var node = new Node<T>(data, this.head);
             head = node;
         }
 
+        /// <summary>
+        /// Gets the size of the linked list
+        /// </summary>
+        /// <returns>Returns the number of nodes in the linked list.</returns>
         public int Size()
         {
             int counter = 0;
@@ -44,11 +63,19 @@ namespace LinkedList
             return counter;
         }
 
+        /// <summary>
+        /// Gets the first node of the linked list
+        /// </summary>
+        /// <returns>Returns the first node of the linked list.</returns>
         public Node<T> GetFirst()
         {
             return head;
         }
 
+        /// <summary>
+        /// Gets the last node of the linked list
+        /// </summary>
+        /// <returns>Returns the last node of the linked list</returns>
         public Node<T> GetLast()
         {
 
@@ -66,11 +93,18 @@ namespace LinkedList
             return node;
         }
 
+        /// <summary>
+        /// Empties the linked list of any nodes.
+        /// </summary>
         public void Clear()
         {
             head = null;
         }
 
+        /// <summary>
+        /// Removes only the first node of the linked list. 
+        /// The list's head should now be the second element.
+        /// </summary>
         public void RemoveFirst()
         {
             if (head == null)
@@ -79,6 +113,9 @@ namespace LinkedList
                 head = head.Next;
         }
 
+        /// <summary>
+        /// Removes the last node of the chain
+        /// </summary>
         public void RemoveLast()
         {
             if (head == null)
@@ -101,6 +138,10 @@ namespace LinkedList
             }
         }
 
+        /// <summary>
+        /// Inserts a new node with provided data at the end of the chain
+        /// </summary>
+        /// <param name="data">the data to be inserted</param>
         public void InsertLast(object data)
         {
             if (head == null)
@@ -114,6 +155,11 @@ namespace LinkedList
             }
         }
 
+        /// <summary>
+        /// Gets the node at the provided index
+        /// </summary>
+        /// <param name="index">the index to get the node at</param>
+        /// <returns>Returns the node at the provided index</returns>
         public Node<T> GetAt(int index)
         {
             int counter = 0;
@@ -130,6 +176,10 @@ namespace LinkedList
             return null;
         }
 
+        /// <summary>
+        /// Removes node at the provided index
+        /// </summary>
+        /// <param name="index">the index of the node to be removed</param>
         public void RemoveAt(int index)
         {
             if (head == null)
@@ -149,6 +199,12 @@ namespace LinkedList
             previousNode.Next = previousNode.Next.Next;
         }
 
+        /// <summary>
+        /// Create an insert a new node at provided index. 
+        /// If index is out of bounds, add the node to the end of the list.	
+        /// </summary>
+        /// <param name="data"> the data to be inserted</param>
+        /// <param name="index"> the index where the new node is inserted at</param>
         public void InsertAt(object data, int index)
         {
             if (head == null)
@@ -173,6 +229,10 @@ namespace LinkedList
         }
     }
 
+    /// <summary>
+    /// Node class
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Node<T>
     {
         private object data;
